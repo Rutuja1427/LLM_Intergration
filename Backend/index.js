@@ -8,11 +8,7 @@ connectDB();
 
 const app = express();
 app.use(express.json());
-app.use(cors({
-  origin: process.env.CORS_ORIGIN,
-  methods: ["GET", "POST"],
-  credentials: true
-}));
+app.use(cors());
 
 app.use("/api", chatRoutes);
 
