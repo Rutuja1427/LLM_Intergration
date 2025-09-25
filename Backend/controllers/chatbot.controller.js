@@ -4,11 +4,11 @@ import Chat from "../models/chat.model.js";
 import dotenv from "dotenv";
 dotenv.config();
 
-// 🔐 Initialize Gemini client
+//  eminini client
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 console.log("Gemini API key loaded:", !!process.env.GEMINI_API_KEY);
 
-// ⏳ Retry logic for overloaded model
+//  Retry logic for overloaded model
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 async function safeGenerate(model, prompt) {
@@ -38,7 +38,7 @@ async function safeGenerate(model, prompt) {
   return null;
 }
 
-// 🚀 Main controller
+// Main controller
 export const sendMessage = async (req, res) => {
   try {
     const { message } = req.body;
